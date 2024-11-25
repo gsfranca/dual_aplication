@@ -1,0 +1,36 @@
+
+<p>
+  <form action="/read" method="GET">
+
+    <table class="table">
+
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">NOME DA TAREFA</th>
+          <th scope="col">DATA DE INICIO</th>
+          <th scope="col">DATA FINAL</th>
+           <th scope="col">AÇÕES</th>
+        </tr>
+        
+      </thead>
+
+      <tbody>
+        {{#each data}}
+            <tr>
+              <td>{{this.id}}</td>
+              <td>{{this.nome_tarefa}}</td>
+              <td>{{this.dataInicio_tarefa}}</td>
+              <td>{{this.dataFinal_tarefa}}</td>
+              <td>
+                  <button class="btn btn-primary"><a href="/edit/{{id}}" style="color: inherit;">Editar</a></button>
+                  <button class="btn btn-danger"><a href="/delete/{{id}}" style="color: inherit;">Excluir</a></button>
+              </td>
+            </tr>
+        {{/each}}
+      </tbody>
+
+    </table>
+
+  </form>
+</p>
